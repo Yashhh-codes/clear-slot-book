@@ -37,9 +37,9 @@ const categories = [
 ];
 
 const doctors = [
-  { name: "Dr. Sarah Johnson", specialty: "Cardiologist", rating: 4.9, reviews: 284, location: "City Hospital", available: "Today, 3:00 PM", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face" },
-  { name: "Dr. Amit Patel", specialty: "General Physician", rating: 4.8, reviews: 512, location: "MedCare Clinic", available: "Today, 5:30 PM", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face" },
-  { name: "Dr. Emily Chen", specialty: "Dermatologist", rating: 4.9, reviews: 198, location: "Skin Health Center", available: "Tomorrow, 10 AM", image: "https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=200&h=200&fit=crop&crop=face" },
+  { name: "Dr. Ananya Sharma", specialty: "Cardiologist", rating: 4.9, reviews: 284, location: "Apex Hospital", available: "Today, 3:00 PM", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop&crop=face" },
+  { name: "Dr. Vikram Malhotra", specialty: "General Physician", rating: 4.8, reviews: 512, location: "Swasthya Care", available: "Today, 5:30 PM", image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&crop=face" },
+  { name: "Dr. Kavita Reddy", specialty: "Dermatologist", rating: 4.9, reviews: 198, location: "Clear Skin Clinic", available: "Tomorrow, 10 AM", image: "https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=200&h=200&fit=crop&crop=face" },
 ];
 
 function HomePage() {
@@ -83,19 +83,19 @@ function HomePage() {
             <div className="flex items-start gap-4">
               <img
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=120&fit=crop&crop=face"
-                alt="Dr. Sarah Johnson"
+                alt="Dr. Ananya Sharma"
                 className="w-14 h-14 rounded-xl object-cover"
                 loading="lazy"
                 width={56}
                 height={56}
               />
               <div className="flex-1 min-w-0">
-                <h4 className="font-semibold text-foreground">Dr. Sarah Johnson</h4>
+                <h4 className="font-semibold text-foreground">Dr. Ananya Sharma</h4>
                 <p className="text-sm text-muted-foreground">Cardiologist</p>
                 <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1"><Calendar size={13} /> Apr 18, 2026</span>
                   <span className="flex items-center gap-1"><Clock size={13} /> 3:00 PM</span>
-                  <span className="flex items-center gap-1"><MapPin size={13} /> City Hospital</span>
+                  <span className="flex items-center gap-1"><MapPin size={13} /> Apex Hospital</span>
                 </div>
               </div>
             </div>
