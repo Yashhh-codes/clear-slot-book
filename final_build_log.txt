@@ -1,0 +1,6 @@
+
+> build
+> NITRO_PRESET=netlify vite build
+
+'NITRO_PRESET' is not recognized as an internal or external command,
+operable program or batch file.
