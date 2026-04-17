@@ -117,21 +117,21 @@ function NotificationPanel({ notifs, onMarkAllRead, onMarkRead, onClose }: Notif
       <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/30">
         <div className="flex items-center gap-2">
           <p className="text-sm font-bold text-foreground">Notifications</p>
-          {unreadCount > 0 ? (
+          {unreadCount > 0 && (
             <span className="text-[10px] font-bold text-primary-foreground bg-primary px-1.5 py-0.5 rounded-full">
               {unreadCount}
             </span>
-          ) : null}
+          )}
         </div>
         <div className="flex items-center gap-1">
-          {unreadCount > 0 ? (
+          {unreadCount > 0 && (
             <button
               onClick={onMarkAllRead}
               className="text-[11px] font-semibold text-primary hover:underline px-1"
             >
               Mark all read
             </button>
-          ) : null}
+          )}
           <button
             onClick={onClose}
             className="w-7 h-7 rounded-full bg-muted flex items-center justify-center hover:bg-muted/80 transition-colors ml-1"
@@ -144,7 +144,7 @@ function NotificationPanel({ notifs, onMarkAllRead, onMarkRead, onClose }: Notif
       {/* Notification list section */}
       <div className="overflow-y-auto max-h-[400px]">
         {/* Empty state */}
-        {notifs.length === 0 ? (
+        {notifs.length === 0 && (
           <div className="py-12 text-center">
             <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center mx-auto mb-3">
               <Bell size={22} className="text-muted-foreground/40" />
@@ -152,10 +152,10 @@ function NotificationPanel({ notifs, onMarkAllRead, onMarkRead, onClose }: Notif
             <p className="text-sm font-semibold text-foreground">All caught up!</p>
             <p className="text-xs text-muted-foreground mt-1">No new notifications</p>
           </div>
-        ) : null}
+        )}
 
         {/* Notif list items */}
-        {notifs.length > 0 ? (
+        {notifs.length > 0 && 
           notifs.map((notif, i) => {
             const meta = notifIconMap[notif.type];
             const NotifIcon = meta.icon;
@@ -183,7 +183,7 @@ function NotificationPanel({ notifs, onMarkAllRead, onMarkRead, onClose }: Notif
                     >
                       {notif.title}
                     </p>
-                    {notif.read ? null : (
+                    {!notif.read && (
                       <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1.5" />
                     )}
                   </div>
@@ -197,7 +197,7 @@ function NotificationPanel({ notifs, onMarkAllRead, onMarkRead, onClose }: Notif
               </motion.button>
             );
           })
-        ) : null}
+        }
       </div>
 
       {/* Footer section */}
@@ -354,7 +354,7 @@ function HomeLayout() {
                   </motion.div>
 
                   <AnimatePresence>
-                    {unreadCount > 0 ? (
+                    {unreadCount > 0 && (
                       <motion.span
                         key="badge"
                         initial={{ scale: 0 }}
@@ -364,19 +364,19 @@ function HomeLayout() {
                       >
                         {unreadCount}
                       </motion.span>
-                    ) : null}
+                    )}
                   </AnimatePresence>
                 </button>
 
                 <AnimatePresence>
-                  {notifOpen ? (
+                  {notifOpen && (
                     <NotificationPanel
                       notifs={notifs}
                       onMarkAllRead={markAllRead}
                       onMarkRead={markRead}
                       onClose={() => setNotifOpen(false)}
                     />
-                  ) : null}
+                  )}
                 </AnimatePresence>
               </div>
 
