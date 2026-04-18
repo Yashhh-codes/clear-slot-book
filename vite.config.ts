@@ -7,7 +7,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [
-    tanstackRouter(),
+    tanstackRouter({
+      autoCodeSplitting: false,
+    }),
     tanstackStart({
       deployment: "netlify",
     }),
